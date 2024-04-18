@@ -1,0 +1,31 @@
+import = ["/Users/devonlin101/.alacritty-colorscheme/themes/everforest.yaml"]
+
+#[Cursor]
+#blink_interval = 750
+#blink_timeout = 5
+#blinking = "Always"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 7.3
+
+[font.bold]
+family = "VictorMono Nerd Font Mono"
+style = "SemiBold"
+
+[font.italic]
+family = "VictorMono Nerd Font Mono"
+style = "SemiBold Italic"
+
+[font.normal]
+family = "VictorMono Nerd Font Mono"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "none"
+dynamic_title = true
