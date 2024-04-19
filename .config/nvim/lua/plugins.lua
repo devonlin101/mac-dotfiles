@@ -48,7 +48,7 @@ local plugins = {
 	-- "L3MON4D3/LuaSnip", -- Snippets plugin
 	"hrsh7th/vim-vsnip-integ",
 	"christoomey/vim-tmux-navigator",
-	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.

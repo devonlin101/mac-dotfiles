@@ -5,6 +5,7 @@ require("hop").setup()
 require("Comment").setup()
 require("bufferline").setup({})
 require("gitsigns").setup()
+require("luasnip.loaders.from_vscode").lazy_load()
 require("mason").setup({
 	opts = {
 		ensure_installed = {
