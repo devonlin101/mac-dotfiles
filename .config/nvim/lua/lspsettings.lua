@@ -13,6 +13,7 @@ lspconfig.clangd.setup({})
 lspconfig.cmake.setup({})
 -- lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})
+lspconfig.tailwindcss.setup({})
 lspconfig.rust_analyzer.setup({
 	-- Server-specific settings. See `:help lspconfig-setup`
 	settings = {
