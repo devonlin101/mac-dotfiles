@@ -63,7 +63,7 @@ require("telescope").setup({
 	},
 	pickers = {
 		find_files = {
-			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+			hidden = true, --will still show the inside of `.git/` as it's not `.gitignore`d.
 			find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
 		},
 	},
@@ -79,6 +79,11 @@ require("telescope").setup({
 })
 require("telescope").load_extension("file_browser")
 
+-- require("ufo").setup({
+-- 	provider_selector = function(bufnr, filetype, buftype)
+-- 		return { "treesitter", "indent" }
+-- 	end,
+-- })
 -- require("telescope").load_extension("fzf")
 
 -- require("lint").linters_by_ft = {

@@ -49,6 +49,7 @@ local plugins = {
 	"hrsh7th/vim-vsnip-integ",
 	"christoomey/vim-tmux-navigator",
 	"rafamadriz/friendly-snippets",
+	{ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
@@ -160,6 +161,7 @@ local plugins = {
 			-- Define your formatters
 			formatters_by_ft = {
 				json = { "biome" },
+				mdx = { "doctoc", "cbfmt" },
 				sh = { "beautysh" },
 				cpp = { "clang_format" },
 				cmake = { "cmake_format" },
