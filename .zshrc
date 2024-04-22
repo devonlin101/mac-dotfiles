@@ -17,11 +17,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-#ZSH_TMUX_AUTOSTART=true
-#ZSH_TMUX_AUTOSTART_ONCE=true
-#ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=true
 
-VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -54,14 +53,11 @@ VI_MODE_SET_CURSOR=true
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
-
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -84,7 +80,7 @@ VI_MODE_SET_CURSOR=true
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git tmux web-search vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git web-search z tmux vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,42 +109,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias ls='logo-ls'
-alias v='nvim'
-alias c='clear'
-alias s='source'
-alias t='tmux'
-alias e='exit'
-alias u='sh dailybash.sh'
-# alias bat='bat--paging=never'
-# Alias ls to exa
-alias ls='eza --icons --color=always --group-directories-first'
-
-if [[ $TMUX != "" ]] then
-    export TERM="screen-256color"
-else
-    export TERM="tmux-256color"
-fi
+alias v="nvim"
+alias s="source"
+alias c="clear"
+alias e="exit"
+alias l="eza --icons --color=always"
+alias la="eza -a --icons --color=always"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export FPATH="<path_to_eza>/completions/zsh:$FPATH"
- # fnm
-  export PATH="/home/devonlin10/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-
-
-if type brew &>/dev/null; then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    autoload -Uz compinit
-    compinit
-fi
+# fnm
+export PATH="/Users/devonlin10/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
-# fnm
-export PATH="/home/devonlin10/.local/share/fnm:$PATH"
-eval "`fnm env`"
