@@ -35,9 +35,9 @@ local options = {
 	foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
 	foldlevelstart = 99,
 	foldenable = true,
+	cursorline = true,
 
 	-- laststatus = 3,
-	--	cursorline = true,
 	-- background = "dark",
 	-- foldmethod = "expr",
 	-- foldexpr = "nvim_treesitter#foldexpr()",
