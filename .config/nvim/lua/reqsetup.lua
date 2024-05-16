@@ -3,7 +3,7 @@
 require("everforest").load()
 require("hop").setup()
 require("Comment").setup()
-require("bufferline").setup({})
+-- require("bufferline").setup({})
 require("gitsigns").setup()
 require("barbecue").setup()
 require("luasnip.loaders.from_vscode").lazy_load()

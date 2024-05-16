@@ -113,6 +113,7 @@ alias v="nvim"
 alias s="source"
 alias c="clear"
 alias e="exit"
+alias u='sh macbash.sh'
 alias l="eza --icons --color=always"
 alias la="eza -a --icons --color=always"
 
@@ -125,3 +126,7 @@ eval "`fnm env`"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# >>> xmake >>>
+test -f "/Users/devonlin10/.xmake/profile" && source "/Users/devonlin10/.xmake/profile"
+# <<< xmake <<<
+eval "$(fzf --zsh)"
