@@ -55,5 +55,5 @@ map("n", "<space>q", "<Cmd>:TroubleToggle<CR>", opts)
 
 -- map("n", "gD", vim.lsp.buf.declaration, opts)
 map("n", "gd", vim.lsp.buf.definition, opts)
-map("n", "K", vim.lsp.buf.hover, opts)
+-- map("n", "K", vim.lsp.buf.hover, opts)
 map("n", "<space>rn", vim.lsp.buf.rename, opts)

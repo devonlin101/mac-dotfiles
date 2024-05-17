@@ -2,8 +2,10 @@
 -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 -- mini.nvim setup
-require("mini.comment").setup()
+-- require("mini.comment").setup()
 require("mini.surround").setup() --sa: add surrounding sd: delete surrounding sr: replace surrounding
+require("mini.files").setup()
+require("mini.fuzzy").setup()
 require("mini.tabline").setup()
 require("mini.pairs").setup()
 require("mini.cursorword").setup()
