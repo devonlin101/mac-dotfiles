@@ -20,5 +20,7 @@ style = "Regular"
 [mouse]
 hide_when_typing= true
 
-# [window]
+[window]
+# title = "${pwd}"
+dynamic_title = true
 # decorations="none"

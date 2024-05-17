@@ -17,6 +17,11 @@ local plugins = {
 	-- "Shatur/neovim-ayu",
 	-- "hrsh7th/cmp-vsnip",
 	-- "hrsh7th/vim-vsnip",
+	-- { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	-- { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
+	-- {
+	-- 	"smoka7/hop.nvim",
+	-- 	version = "*",
 	-- },
 	-- {
 	-- 	"nvim-telescope/telescope.nvim",
@@ -24,6 +29,20 @@ local plugins = {
 	-- 	dependencies = { { "nvim-lua/plenary.nvim" } },
 	-- },
 	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- {
+	-- 	"utilyre/barbecue.nvim",
+	-- 	name = "barbecue",
+	-- 	version = "*",
+	-- 	dependencies = {
+	-- 		"SmiteshP/nvim-navic",
+	-- 		"nvim-tree/nvim-web-devicons", -- optional dependency
+	-- 	},
+	-- },
+	-- {
+	-- 	"windwp/nvim-autopairs",
+	-- 	event = "InsertEnter",
+	-- 	opts = {},
+	-- },
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
@@ -35,20 +54,10 @@ local plugins = {
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
 	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-	-- "L3MON4D3/LuaSnip", -- Snippets plugin
 	"hrsh7th/vim-vsnip-integ",
 	"christoomey/vim-tmux-navigator",
 	"rafamadriz/friendly-snippets",
-	{ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
-	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-	},
+	{ "echasnovski/mini.nvim", version = "*" },
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
@@ -87,10 +96,6 @@ local plugins = {
 		end,
 	},
 	{
-		"smoka7/hop.nvim",
-		version = "*",
-	},
-	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
 		lazy = false,
@@ -98,17 +103,7 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {},
-	},
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
-	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
