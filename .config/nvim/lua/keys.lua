@@ -23,7 +23,7 @@ map("n", "<space>g", builtin.live_grep, opts)
 -- trouble plugin keybindings
 map("n", "<space>q", "<Cmd>:TroubleToggle<CR>", opts)
 
-map("n", "<leader>f", "<Cmd>:lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", opts)
+map("n", "<space>e", "<Cmd>:lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", opts)
 -- map("n", "gD", vim.lsp.buf.declaration, opts)
 -- map("n", "gd", vim.lsp.buf.definition, opts)
 -- map("n", "K", vim.lsp.buf.hover, opts)
