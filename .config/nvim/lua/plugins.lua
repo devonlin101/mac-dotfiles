@@ -14,35 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 
-	-- "Shatur/neovim-ayu",
-	-- "hrsh7th/cmp-vsnip",
-	-- "hrsh7th/vim-vsnip",
-	-- { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-	-- { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
-	-- {
-	-- 	"smoka7/hop.nvim",
-	-- 	version = "*",
-	-- },
-	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	tag = "0.1.4",
-	-- 	dependencies = { { "nvim-lua/plenary.nvim" } },
-	-- },
-	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	-- {
-	-- 	"utilyre/barbecue.nvim",
-	-- 	name = "barbecue",
-	-- 	version = "*",
-	-- 	dependencies = {
-	-- 		"SmiteshP/nvim-navic",
-	-- 		"nvim-tree/nvim-web-devicons", -- optional dependency
-	-- 	},
-	-- },
-	-- {
-	-- 	"windwp/nvim-autopairs",
-	-- 	event = "InsertEnter",
-	-- 	opts = {},
-	-- },
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
@@ -94,14 +65,6 @@ local plugins = {
 				-- 	diagnostic_text_hightlight = true,
 			})
 		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	{
@@ -207,3 +170,85 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+--======================================================================================================
+
+--vim.cmd.colorscheme("catppuccin-macchiato")
+-- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
+-- mini.nvim setup
+-- require("mini.comment").setup()
+require("mini.surround").setup() --sa: add surrounding sd: delete surrounding sr: replace surrounding
+require("mini.fuzzy").setup()
+require("mini.tabline").setup()
+require("mini.pairs").setup()
+require("mini.cursorword").setup()
+require("mini.files").setup({})
+require("mini.jump2d").setup({
+	mappings = {
+		start_jumping = "f",
+	},
+})
+-- require("mini.jump").setup()
+
+require("everforest").load()
+-- require("hop").setup()
+require("gitsigns").setup()
+require("luasnip.loaders.from_vscode").lazy_load()
+require("mason").setup({
+	opts = {
+		ensure_installed = {
+			"typescript-language-server",
+		},
+	},
+})
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"clangd",
+		"cmake",
+		"bashls",
+		"dockerls",
+		"tsserver",
+		"lua_ls",
+		"prismals",
+		"rust_analyzer",
+	},
+	automatic_installation = true,
+})
+require("ibl").setup({
+	scope = {
+		show_exact_scope = true,
+		highlight = { "Function", "Label" },
+		include = {
+			node_type = { ["*"] = { "*" } },
+		},
+	},
+})
+require("telescope").setup({
+	defaults = {
+		layout_strategy = "vertical",
+		file_ignore_patterns = {
+			"node_modules",
+			"build",
+			"dist",
+			"yarn.lock",
+			".gitignore",
+		},
+	},
+	pickers = {
+		find_files = {
+			hidden = true, --will still show the inside of `.git/` as it's not `.gitignore`d.
+			find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
+		},
+	},
+	extensions = {
+		file_browser = {
+			-- cwd = vim.g.documentos,
+			hijack_netrw = true,
+			select_buffer = true,
+			hidden = true,
+			depth = 2,
+		},
+	},
+})
+require("telescope").load_extension("file_browser")

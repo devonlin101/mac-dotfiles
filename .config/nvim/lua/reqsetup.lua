@@ -27,21 +27,21 @@ require("mason").setup({
 		},
 	},
 })
-require("nvim-tree").setup({
-	disable_netrw = true,
-	hijack_netrw = true,
-	renderer = {
-		highlight_opened_files = "all",
-		indent_markers = {
-			enable = true,
-		},
-	},
-	actions = {
-		open_file = {
-			quit_on_open = true,
-		},
-	},
-})
+-- require("nvim-tree").setup({
+-- 	disable_netrw = true,
+-- 	hijack_netrw = true,
+-- 	renderer = {
+-- 		highlight_opened_files = "all",
+-- 		indent_markers = {
+-- 			enable = true,
+-- 		},
+-- 	},
+-- 	actions = {
+-- 		open_file = {
+-- 			quit_on_open = true,
+-- 		},
+-- 	},
+-- })
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"clangd",
