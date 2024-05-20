@@ -82,6 +82,7 @@ local plugins = {
 					"javascript",
 					"html",
 					"lua",
+					"markdown",
 					"markdown_inline",
 					"rust",
 					"sql",
@@ -93,7 +94,7 @@ local plugins = {
 				sync_install = false,
 				highlight = {
 					enable = true,
-					disable = { "markdown" }, -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+					disable = {}, -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
 					-- disable = function(lang, buf)
 					-- 	local max_filesize = 100 * 1024 -- 100 KB
 					-- 	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
