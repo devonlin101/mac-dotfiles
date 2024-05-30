@@ -1,6 +1,5 @@
 local options = {
 
-	--	termguicolors = true,
 	backup = false,
 	number = true,
 	showmode = false,
@@ -35,9 +34,10 @@ local options = {
 	foldlevelstart = 99,
 	foldenable = true,
 	cursorline = true,
+	laststatus = 0,
 
+	-- termguicolors = true,
 	-- cmdheight = 0,
-	-- laststatus = 3,
 	-- background = "dark",
 	-- foldmethod = "expr",
 	-- foldexpr = "nvim_treesitter#foldexpr()",

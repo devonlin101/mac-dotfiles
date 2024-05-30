@@ -17,9 +17,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
+#ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART_ONCE=true
+#ZSH_TMUX_AUTOCONNECT=true
 
 VI_MODE_SET_CURSOR=true
 # Set list of themes to pick from when loading at random

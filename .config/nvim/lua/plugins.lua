@@ -13,12 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"lewis6991/gitsigns.nvim",
-	"freddiehaddad/feline.nvim",
 	"hrsh7th/nvim-cmp", -- Autocompletion plugin
 	"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 	"hrsh7th/cmp-buffer",
@@ -27,7 +25,8 @@ local plugins = {
 	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
 	"hrsh7th/vim-vsnip-integ",
 	"christoomey/vim-tmux-navigator",
-	"rafamadriz/friendly-snippets",
+	-- "rafamadriz/friendly-snippets",
+	-- "freddiehaddad/feline.nvim",
 	{ "echasnovski/mini.nvim", version = "*" },
 	{
 		"L3MON4D3/LuaSnip",
@@ -35,6 +34,7 @@ local plugins = {
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!).
 		build = "make install_jsregexp",
+		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
@@ -66,7 +66,6 @@ local plugins = {
 			})
 		end,
 	},
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -180,11 +179,19 @@ require("lazy").setup(plugins, opts)
 -- mini.nvim setup
 -- require("mini.comment").setup()
 require("mini.surround").setup() --sa: add surrounding sd: delete surrounding sr: replace surrounding
+-- require("mini.completion").setup({})
+require("mini.statusline").setup()
 require("mini.fuzzy").setup()
 require("mini.tabline").setup()
 require("mini.pairs").setup()
 require("mini.cursorword").setup()
 require("mini.files").setup({})
+require("mini.indentscope").setup({
+	draw = {
+		delay = 10,
+	},
+	symbol = "｜",
+})
 require("mini.jump2d").setup({
 	mappings = {
 		start_jumping = "f",
@@ -215,15 +222,6 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 	},
 	automatic_installation = true,
-})
-require("ibl").setup({
-	scope = {
-		show_exact_scope = true,
-		highlight = { "Function", "Label" },
-		include = {
-			node_type = { ["*"] = { "*" } },
-		},
-	},
 })
 require("telescope").setup({
 	defaults = {
